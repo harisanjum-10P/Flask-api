@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            text-align: center;
+            background-color: blueviolet;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+    </style>
+</head>
+
+<body>
+
+    {% if jokes != "No Joke" %}
+        <h1>{{jokes.value}}</h1>
+    {% else %}
+        <h1>Sorry that categorical joke does not exist</h1>
+    {% endif %}
+    
+</body>
+</html>

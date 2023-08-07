@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            font-family: sans-serif;
+            background-color: beige;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+        }
+
+        form{
+            padding: 20px;
+            background-color: rgb(245, 245, 213);
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            text-align: center;
+        }
+
+    </style>
+
+</head>
+<body>
+    <form action="http://localhost:5000/abc" method="post">
+        <h2>Which movie description would you like to see?</h2>
+        <p><input type="text" name="movieName"></p>
+        <p><input type="submit" name="submit"></p>
+        <h3>List of Available Movies</h3>
+        {% block content %}
+            {% for oneMovie in allMovies: %}
+                <p>{{oneMovie.original_title}}</p>
+            {% endfor %}
+        {% endblock %}
+
+    </form>
+</body>
+</html>

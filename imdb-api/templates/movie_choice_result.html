@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Description</title>
+
+    <style>
+        body{
+            font-family: sans-serif;
+            background-color: beige;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            margin-top: 10px;
+            align-items: center;
+            height: 100vh;
+            padding: 50px;
+        }
+
+        #movie {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 400px;
+            height: 250px;
+        }
+
+        img{
+            border-radius: 5%;
+            box-shadow: 0 10px 15px  rgba(0, 0, 0, 0.2);
+        }
+
+
+      </style>
+
+</head>
+<body>
+    <div id="movie">
+
+        {% if movie != "Nothing" %}
+            <img src="http://image.tmdb.org/t/p/w500{{movie.backdrop_path}}" alt="{{movie.original_title}} image">
+            <h2>{{movie.original_title}}</h2>
+            <h3>Plot</h3>
+            <p>{{movie.overview}}</p>
+            <h3>Popularity</h3>
+            <p>{{movie.popularity}}</p>
+            <h3>Vote Average</h3>
+            <p>{{movie.vote_average}}</p>
+        {% else %}
+            <h1>Sorry that movie does not exist</h1>
+        {% endif %}
+    </div>
+</body>
+</html>
